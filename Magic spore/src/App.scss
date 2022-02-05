@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "TTNormsBold";
+  src: url("./assets/fonts/TTNorms-Bold.otf");
+}
+
+@font-face {
+  font-family: "TTNormsMedium";
+  src: url("./assets/fonts/TTNorms-Medium.otf");
+}
+
+@font-face {
+  font-family: "TTNormsRegular";
+  src: url("./assets/fonts/TTNorms-Regular.otf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "TTNormsRegular";
+}
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  background: url("./assets/imgs/background.png") no-repeat;
+  background-size: cover;
+  @media (max-width: 768px) {
+    padding: 0 12px;
+  }
+}
+::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #643fdb;
+  border-radius: 20px;
+  transition: all 0.4s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}

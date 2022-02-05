@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.MuiPaper-elevation1{
+  box-shadow:none !important;
+}
+.minting-button{
+  padding: 8px 24px !important;
+  color: #fff !important;
+  font-family: "TTNormsMedium" !important;
+  background: #CD068E !important;
+  cursor: pointer !important;
+  text-transform: capitalize !important;
+  border: none !important;
+  border-radius: 8px !important;
+  transition: all ease-in .3s !important;
+} &:hover {
+  background: #fff !important;
+  color: #CD068E !important;
+}
+.fontCustom{
+  color: #fff !important;
+  font-family: "TTNormsMedium" !important;
+}
+.connectBtn{
+    font-size: 12px!important;
+    font-family: "TTNormsMedium"  !important;
+
+}
+@font-face {
+  font-family: "TTNormsBold";
+  src: url("./assets/fonts/TTNorms-Bold.otf");
+}
+
+@font-face {
+  font-family: "TTNormsMedium";
+  src: url("./assets/fonts/TTNorms-Medium.otf");
+}
+
+@font-face {
+  font-family: "TTNormsRegular";
+  src: url("./assets/fonts/TTNorms-Regular.otf");
+}
+
+.App {
+  width: 100vw;
+  padding: 0 12.5%;
+  height: 100vh;
+  background: #0c0c0c;
+  background: url("./assets/imgs/background.png") no-repeat;
+  background-size: cover;
+  @media (max-width: 768px) {
+      padding: 0 12px;
+  }
+}
