@@ -45,7 +45,7 @@ function TransformerCard({ setCard }) {
         </ProfileContainer>
         <LeftBtnGroup>
           <a href="https://twitter.com/ScobySocial" target={"_blank"}>
-            <MintAssetBtn>Mint Asset</MintAssetBtn>
+            <MintAssetBtn>Mint Spore</MintAssetBtn>
           </a>
           <a href="https://www.scoby.social" target={"_blank"}>
             <ViewWebsiteBtn>View Wesbite</ViewWebsiteBtn>
