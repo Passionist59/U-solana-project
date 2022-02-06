@@ -115,7 +115,7 @@ const Card = ({ coins }) => {
               <Grid item container justifyContent="center" spacing={2} xs={12}>
                 <Grid item container xs={6} justifyContent="center">
                   <Typography variant="h1" component="div" sx={CardDesc}>
-                    Number <br /> Available <br /> 23/1000
+                    Number <br /> Available <br /> 1000/1000
                   </Typography>
                 </Grid>
                 <Grid item container xs={6} justifyContent="center">
