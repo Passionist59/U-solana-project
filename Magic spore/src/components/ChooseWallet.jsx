@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ScobyWallet from "../assets/imgs/navbarLogo.png";
 import Solflare from "../assets/imgs/solflare.png";
@@ -8,9 +8,11 @@ import Phantom from "../assets/imgs/phantom.png";
 import { AiOutlineClose } from "react-icons/ai";
 import { connect } from "react-redux";
 import { SetWallet } from "../store/actions";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
 function ChooseWallet({ setConnectWallet, GetChosenWallet, SetWallet }) {
   const router = useNavigate()
+
+  const solanaWeb3 = require('@solana/web3.js');
   const Wallets = [
     { name: "Scoby wallet", icon: ScobyWallet, href: "#", coins: 120 },
     {
@@ -33,6 +35,28 @@ function ChooseWallet({ setConnectWallet, GetChosenWallet, SetWallet }) {
     },
     { name: "Sollet", icon: Sollet, href: "#", coins: 120 },
   ];
+  const [walletAddress, setWalletAddress] = useState(null);
+  const connectWallet = async (wallet)=>{
+    try {
+      const { solana } = window;
+      if (solana) {
+        if(solana.isPhantom) {
+            console.log('Phantom wallet found!');
+          const response = await solana.connect();
+          
+          console.log('Connected with publick key:', response.publicKey.toString());
+          setWalletAddress(response.publicKey.toString());
+          GetChosenWallet(wallet);
+          setConnectWallet(false);
+          SetWallet(wallet);
+          router('/marketplace/magicspore/1')
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
   return (
     <Container>
       <BACKG></BACKG>
@@ -46,10 +70,7 @@ function ChooseWallet({ setConnectWallet, GetChosenWallet, SetWallet }) {
             <a>
               <Wallet
                 onClick={() => {
-                  GetChosenWallet(wallet);
-                  setConnectWallet(false);
-                  SetWallet(wallet);
-                  router('/marketplace/magicspore/1')
+                  connectWallet(wallet);
                 }}
               >
                 <WalletName>{wallet.name}</WalletName>
