@@ -3,8 +3,13 @@ import { ErrorMessage, useField } from "formik";
 import { CardTextField } from "./style";
 
 const InputHandler = (props) => {
-  const [field, meta] = useField(props);
-  console.log(field);
+  const [field, meta,helpers] = useField(props);
+  console.log("field->",field);
+  console.log("meta->",meta);
+  console.log("helpers->",helpers);
+
+  const {value} = meta;
+  const{setValue} = helpers;
   return (
     <div>
       <CardTextField
