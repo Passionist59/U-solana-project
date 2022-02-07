@@ -4,6 +4,7 @@ import { CardTextField } from "./style";
 
 const InputHandler = (props) => {
   const [field, meta] = useField(props);
+  console.log(field);
   return (
     <div>
       <CardTextField

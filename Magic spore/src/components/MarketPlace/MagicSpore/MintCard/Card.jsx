@@ -99,7 +99,7 @@ const Card = ({ coins }) => {
   return (
     <Box sx={CardStyle}>
       <Formik
-        initialValues={{ sols: coins, mints: 10, totalPrice: 3 }}
+        initialValues={{ sols: coins, mints: 10, totalPrice: 10 }}
         onSubmit={(values) => {
           CheckErrors(values.mints, values.sols);
         }}
